@@ -13,15 +13,38 @@ body {
   background-color: #f0f0f0;
 }
 
-.upload-container {
-  text-align: center;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px;
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
+  .title {
+  font-size: 28px;
+  font-weight: bold;
 }
+
+  .navigation {
+  display: flex;
+  gap: 20px;
+}
+
+.upload-container {
+  text-align: center;
+  padding: 50px;
+
+}
+
+button {
+  padding: 13px 23px;
+  font-size: 16px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border: none;
+  
+}
+
 
 .gallery {
   display: grid;
@@ -37,7 +60,8 @@ button {
 
 .gallery img {
   max-width: 100%;
-  height: auto;
+  max-height: 100%; /* Adicione essa linha para ajustar a altura */
+  width: auto; /* Adicione essa linha para garantir a proporção */
   border: 1px solid #ccc;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -55,6 +79,7 @@ button {
 .image-container img {
   max-width: 100%;
   height: auto;
+
 }
 
 .image-container button {
@@ -85,7 +110,7 @@ button {
 }
 
 .gallery img.selected {
-  border: 2px solid #00ff00;
+  border: 2px solid #ff0000;
 }
 .remove-icon {
   position: absolute;
@@ -93,8 +118,15 @@ button {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 24px;
-  color: #ff5757;
+  color: #f03232;
   cursor: pointer;
+}
+#removalModeButton:hover
+{
+  background-color: rgb(230, 109, 109);
+}
+#uploadButton:hover{
+  background-color: rgb(113, 220, 113);
 }
 @media (max-width: 768px) {
 
@@ -128,13 +160,22 @@ button {
   <title>Galeria de Fotos</title>
 </head>
 <body>
+  <div class="header">
+    <div class="title">
+      Artefatos Históricos
+    </div>
+    <div class="navigation">
+      <a href="#">Opção 1</a>
+      <a href="#">Opção 2</a>
+      <a href="#">Opção 3</a>
+    </div>
+  </div>
   <div class="upload-container">
     <button id="uploadButton">Fazer upload de fotos</button>
-    <button id="removalModeButton">Modo Remoção</button>
+    <button id="removalModeButton">Remover Fotos</button>
   </div>
   <div class="gallery"></div>
   <script src="script.js"></script>
-
 
 </body>
 </html>
